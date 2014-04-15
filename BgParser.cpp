@@ -15,8 +15,8 @@ public:
 		m_fd = fopen(filename, "r");
 		return m_fd != NULL;
 	}
-	bool read_next(char* chrom, int *start, int* end, int* score) { 
-		return fscanf(m_fd, "%s\t%d\t%d\t%d",chrom, start, end, score) != EOF;
+	bool read_next(char* chrom, int *start, int* end, float* score) { 
+		return fscanf(m_fd, "%s\t%d\t%d\t%f",chrom, start, end, score) != EOF;
 	}
 
 	void close(){
