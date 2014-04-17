@@ -8,9 +8,14 @@ This is simple parser for bed graph format: http://genome.ucsc.edu/goldenPath/he
 * Input: bed graph file with no track headers
 * Output: returns dictionary of chromosomes, and values as numpy array of score for each bin (generally 20)
 
-# Intall 
+# Install
 Download and then run:
 > python3 setup.py build_ext --inplace
+
+or under MS Windows:
+> python.exe setup.py build_ext --inplace --compiler=msvc --plat-name=win-amd64
+
+(Tested with VS 2012: to use new version of msvc compiler you may have to modify msvc9compiler.py in distutils and specifly get_build_version and PLAT_TO_VCVARS as described in http://www.xavierdupre.fr/blog/2013-07-07_nojs.html)
 
 # Usage
 See example use_bg.py how to load specific bg file.
@@ -36,6 +41,3 @@ Example output:
 >Starting bed graph reader
 >finished... Now starting naive implementation
 >***Bg: 13.576324	 Naive: 116.989906***
-
-
-
